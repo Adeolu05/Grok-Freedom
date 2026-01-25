@@ -1,0 +1,11 @@
+
+{
+  "name": "grok-freedom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Intelligence Unchained. Truth Unfiltered.",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static deployment - no build required'"
+  }
+}
