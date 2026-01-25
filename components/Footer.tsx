@@ -6,16 +6,16 @@ const Footer: React.FC = () => {
     <footer className="bg-black pt-16 pb-8 border-t border-white/5 relative z-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
         <div className="flex items-center gap-8 mb-12">
-          <SocialIcon 
+          <SocialIcon
             icon={
               <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5 fill-current">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
               </svg>
-            } 
-            label="X" 
-            href="https://x.com/GrokFreedom" 
+            }
+            label="X"
+            href="https://x.com/GrokFreedom"
           />
-          <SocialIcon icon={<Send className="w-5 h-5 fill-current" />} label="Telegram" href="https://t.me/GrokFreedom" />
+          <SocialIcon icon={<Send className="w-5 h-5 fill-current" />} label="Telegram" href="https://t.me/GrokFreedomCommunity" />
           <SocialIcon icon={<BarChart2 className="w-5 h-5" />} label="Buy" href="https://pump.fun/coin/2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump" />
         </div>
 
