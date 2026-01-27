@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
 
   const pumpLink = "https://pump.fun/coin/2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump";
   const twitterLink = "https://x.com/GrokFreedom";
-  const telegramLink = "https://t.me/grokfreedom"; // Update with your actual Telegram link
+  const telegramLink = "https://t.me/GrokFreedomCommunity"; // Update with your actual Telegram link
 
   return (
     <section className="relative pt-28 pb-16 min-h-screen flex items-center justify-center overflow-hidden">
