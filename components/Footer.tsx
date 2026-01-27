@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             label="X"
             href="https://x.com/GrokFreedom"
           />
-          <SocialIcon icon={<Send className="w-5 h-5 fill-current" />} label="Telegram" href="https://t.me/GrokFreedom" />
+          <SocialIcon icon={<Send className="w-5 h-5 fill-current" />} label="Telegram" href="https://t.me/GrokFreedomCommunity" />
         </div>
 
         <div className="text-center max-w-2xl">
