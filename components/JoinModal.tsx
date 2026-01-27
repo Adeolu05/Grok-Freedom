@@ -82,7 +82,7 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
                             <div className="px-6 py-4 md:px-12">
                                 <div className="flex flex-col gap-4 max-w-[480px] mx-auto">
                                     <ActionButton label="ECHO ON X" icon={<Volume2 />} href="https://x.com/GrokFreedom" />
-                                    <ActionButton label="RECRUIT ON TELEGRAM" icon={<Send />} href="https://t.me/GrokFreedomCommunity" />
+                                    <ActionButton label="RECRUIT ON TELEGRAM" icon={<Send />} href="https://t.me/GrokFreedom" />
                                 </div>
                             </div>
 
