@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, BarChart2 } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -16,7 +16,6 @@ const Footer: React.FC = () => {
             href="https://x.com/GrokFreedom"
           />
           <SocialIcon icon={<Send className="w-5 h-5 fill-current" />} label="Telegram" href="https://t.me/GrokFreedomCommunity" />
-          <SocialIcon icon={<BarChart2 className="w-5 h-5" />} label="Buy" href="https://pump.fun/coin/2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump" />
         </div>
 
         <div className="text-center max-w-2xl">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Volume2, Send, Copy, Check, ArrowUpRight } from 'lucide-react';
+import { X, Volume2, Send, Copy, Check } from 'lucide-react';
 
 interface JoinModalProps {
     onClose: () => void;
@@ -23,12 +23,10 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
     }, []);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText("2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump");
+        navigator.clipboard.writeText("coming soon...");
         setCaCopied(true);
         setTimeout(() => setCaCopied(false), 2000);
     };
-
-    const pumpLink = "https://pump.fun/coin/2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump";
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
@@ -83,7 +81,6 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
                             {/* Buttons */}
                             <div className="px-6 py-4 md:px-12">
                                 <div className="flex flex-col gap-4 max-w-[480px] mx-auto">
-                                    <ActionButton label="BUY ON PUMPFUN" icon={<ArrowUpRight />} href={pumpLink} />
                                     <ActionButton label="ECHO ON X" icon={<Volume2 />} href="https://x.com/GrokFreedom" />
                                     <ActionButton label="RECRUIT ON TELEGRAM" icon={<Send />} href="https://t.me/GrokFreedomCommunity" />
                                 </div>
@@ -105,7 +102,7 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
                                                 className="w-full bg-[#050a04] text-white font-mono text-sm border border-primary/30 rounded pl-10 pr-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all placeholder-gray-600 truncate shadow-inner shadow-black/50"
                                                 readOnly
                                                 type="text"
-                                                value="2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump"
+                                                value="coming soon..."
                                             />
                                         </div>
                                         <button
