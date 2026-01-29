@@ -36,7 +36,7 @@ const Manifesto: React.FC = () => {
           response = 'AVAILABLE COMMANDS: [HELP] [BUY] [MISSION] [CLEAR] [STATUS]';
           break;
         case 'buy':
-          response = 'CONTRACT ADDRESS: 2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump';
+          response = 'CONTRACT ADDRESS: COMING SOON';
           break;
         case 'mission':
           response = 'MISSION OBJECTIVE: DECENTRALIZE INTELLIGENCE. RESIST CENSORSHIP.';

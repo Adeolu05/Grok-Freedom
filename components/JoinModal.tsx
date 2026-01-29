@@ -23,7 +23,7 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
     }, []);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText("coming soon...");
+        navigator.clipboard.writeText("AWAITING_DEPLOYMENT...");
         setCaCopied(true);
         setTimeout(() => setCaCopied(false), 2000);
     };
@@ -82,7 +82,7 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
                             <div className="px-6 py-4 md:px-12">
                                 <div className="flex flex-col gap-4 max-w-[480px] mx-auto">
                                     <ActionButton label="ECHO ON X" icon={<Volume2 />} href="https://x.com/GrokFreedom" />
-                                    <ActionButton label="RECRUIT ON TELEGRAM" icon={<Send />} href="https://t.me/GrokFreedom" />
+                                    <ActionButton label="RECRUIT ON TELEGRAM" icon={<Send />} href="https://t.me/GrokFreedomCommunity" />
                                 </div>
                             </div>
 
@@ -102,7 +102,7 @@ const JoinModal: React.FC<JoinModalProps> = ({ onClose }) => {
                                                 className="w-full bg-[#050a04] text-white font-mono text-sm border border-primary/30 rounded pl-10 pr-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all placeholder-gray-600 truncate shadow-inner shadow-black/50"
                                                 readOnly
                                                 type="text"
-                                                value="coming soon..."
+                                                value="AWAITING_DEPLOYMENT..."
                                             />
                                         </div>
                                         <button

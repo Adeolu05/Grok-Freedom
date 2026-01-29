@@ -6,12 +6,12 @@ const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("coming soon...");
+    navigator.clipboard.writeText("AWAITING_DEPLOYMENT...");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const pumpLink = "https://pump.fun/coin/2UpC3tjsWS7TdAXcgJn9atxihtxT74zNYKLiDf4Gpump";
+
   const twitterLink = "https://x.com/GrokFreedom";
   const telegramLink = "https://t.me/GrokFreedomCommunity"; // Update with your actual Telegram link
 
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           <div className="bg-surface rounded border border-primary/50 flex flex-col md:flex-row items-center p-2 gap-2 transition-colors group-hover:border-primary">
             <div className="flex-1 w-full flex items-center px-4 py-4 font-mono text-sm md:text-base text-gray-400 overflow-hidden whitespace-nowrap bg-black/50 rounded shadow-inner">
               <span className="text-primary mr-3 select-none">$</span>
-              <span className="truncate group-hover:text-white transition-colors tracking-tight">coming soon...</span>
+              <span className="truncate group-hover:text-white transition-colors tracking-tight">AWAITING_DEPLOYMENT...</span>
             </div>
             <button
               onClick={handleCopy}
