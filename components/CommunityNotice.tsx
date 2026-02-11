@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, ShieldCheck, Users, ArrowRight, Send } from 'lucide-react';
+import { Terminal, ShieldCheck, Users, ArrowRight, Send, Activity } from 'lucide-react';
 
 interface CommunityNoticeProps {
     onDismiss: () => void;
@@ -19,42 +19,57 @@ const CommunityNotice: React.FC<CommunityNoticeProps> = ({ onDismiss }) => {
 
                 <div className="flex items-center gap-4 mb-6 md:mb-8">
                     <div className="p-3 bg-primary/10 border border-primary/20">
-                        <ShieldCheck className="w-8 h-8 text-primary" />
+                        <Terminal className="w-8 h-8 text-primary shadow-[0_0_15px_rgba(67,249,26,0.3)]" />
                     </div>
                     <div>
-                        <h2 className="text-xl md:text-2xl font-bold text-primary tracking-tighter uppercase">Community Notice</h2>
-                        <div className="text-[10px] text-primary/50 tracking-widest uppercase">Protocol Status: Pending Launch</div>
+                        <h2 className="text-xl md:text-2xl font-bold text-primary tracking-tighter uppercase glitch-text" data-text="OFFICIAL LAUNCH PROTOCOL">OFFICIAL LAUNCH PROTOCOL</h2>
+                        <div className="text-[10px] text-primary/50 tracking-widest uppercase">System Status: Launch Sequence Initiated</div>
                     </div>
                 </div>
 
                 <div className="space-y-4 md:space-y-6 text-primary-dim">
-                    <p className="text-base md:text-lg leading-relaxed border-l-2 border-primary/30 pl-4 bg-primary/5 py-2">
-                        The launch will take place once we reach <span className="text-primary font-bold">150 active and participating members</span> in our community.
-                    </p>
-
-                    <p className="leading-relaxed text-sm md:text-base">
-                        Our priority is to build a strong and engaged base before moving forward. A healthy project starts with real people, real participation, and real support.
-                    </p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 md:my-8 text-[11px] md:text-xs">
-                        <div className="p-4 border border-primary/10 bg-primary/5">
-                            <div className="flex items-center gap-2 mb-2">
-                                <Users className="w-4 h-4 text-primary" />
-                                <span className="font-bold text-primary uppercase">Mission</span>
-                            </div>
-                            <p>Invite others, stay active, and help spread Grok Freedom.</p>
+                    <div className="p-4 border border-primary/20 bg-primary/5 rounded-sm">
+                        <div className="text-primary font-bold text-lg md:text-xl mb-1 tracking-widest uppercase">
+                            📅 February 23rd // 19:00 UTC
                         </div>
-                        <div className="p-4 border border-primary/10 bg-primary/5">
-                            <div className="flex items-center gap-2 mb-2">
-                                <AlertCircle className="w-4 h-4 text-primary" />
-                                <span className="font-bold text-primary uppercase">Next Phase</span>
+                        <div className="h-px w-full bg-primary/20 mb-3"></div>
+                        <p className="text-sm md:text-base leading-relaxed text-gray-300">
+                            Over the past days, we have focused on structure, alignment, and preparation. Now it’s time to execute.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-4">
+                        <div className="p-3 border border-primary/10 bg-black/40">
+                            <div className="flex items-center gap-2 mb-1">
+                                <ShieldCheck className="w-3 h-3 text-primary" />
+                                <span className="font-bold text-[10px] text-primary uppercase">Preparation 01</span>
                             </div>
-                            <p>Once we hit 150 active members, the next phase begins.</p>
+                            <p className="text-[11px]">Wallet ready</p>
+                        </div>
+                        <div className="p-3 border border-primary/10 bg-black/40">
+                            <div className="flex items-center gap-2 mb-1">
+                                <Activity className="w-3 h-3 text-primary" />
+                                <span className="font-bold text-[10px] text-primary uppercase">Preparation 02</span>
+                            </div>
+                            <p className="text-[11px]">Network configured</p>
+                        </div>
+                        <div className="p-3 border border-primary/10 bg-black/40">
+                            <div className="flex items-center gap-2 mb-1">
+                                <Users className="w-3 h-3 text-primary" />
+                                <span className="font-bold text-[10px] text-primary uppercase">Preparation 03</span>
+                            </div>
+                            <p className="text-[11px]">Channels monitored</p>
                         </div>
                     </div>
 
-                    <p className="text-center italic text-primary font-bold tracking-widest pt-2 uppercase text-xs md:text-sm">
-                        Grok Freedom moves forward together.
+                    <div className="space-y-2 border-l-2 border-primary/30 pl-4 py-1 italic text-xs md:text-sm text-primary/80">
+                        <p>This is the beginning of the next phase.</p>
+                        <p>Stay focused. Stay disciplined.</p>
+                        <p className="font-bold text-primary">Launches reward preparation.</p>
+                    </div>
+
+                    <p className="text-center italic text-primary font-black tracking-[0.4em] pt-4 uppercase text-sm md:text-base animate-pulse">
+                        Grok Freedom.
                     </p>
                 </div>
 

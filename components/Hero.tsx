@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Copy, ArrowUpRight, Activity, Cpu, Globe, Shield, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -72,11 +72,11 @@ const Hero: React.FC = () => {
         {/* CTAs */}
         <div className="flex flex-wrap justify-center gap-6 mt-6">
           <button
-            disabled
-            className="group relative px-10 py-5 bg-primary/50 text-black/50 font-black text-xl rounded overflow-hidden cursor-not-allowed flex items-center justify-center"
+            className="group relative px-10 py-5 bg-primary text-black font-black text-xl rounded overflow-hidden flex items-center justify-center shadow-[0_0_40px_rgba(67,249,26,0.3)] hover:scale-105 transition-all border-2 border-transparent hover:border-primary/50"
           >
-            <span className="relative flex items-center gap-3">
-              COMING SOON
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <span className="relative flex items-center gap-3 tracking-tighter">
+              LAUNCH FEB 23 @ 19:00 UTC
             </span>
           </button>
           <a
@@ -102,6 +102,9 @@ const Hero: React.FC = () => {
             JOIN TELEGRAM
           </a>
         </div>
+
+        {/* Launch Countdown integrated here */}
+        <LaunchCountdown />
 
         {/* Intelligence Dashboard */}
         <div className="w-full max-w-4xl mt-12 border border-primary/30 bg-background/80 backdrop-blur-xl rounded-xl overflow-hidden relative transform transition-all hover:border-primary/50 hover:shadow-[0_0_40px_rgba(67,249,26,0.2)] group">
@@ -226,5 +229,66 @@ const IntelligenceMatrix: React.FC = () => (
     </div>
   </div>
 );
+
+const LaunchCountdown: React.FC = () => {
+  const launchDate = new Date('2026-02-23T19:00:00Z').getTime();
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0, hours: 0, minutes: 0, seconds: 0
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      if (distance < 0) {
+        clearInterval(timer);
+        return;
+      }
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center gap-6 my-12 animate-fade-in-up">
+      <div className="flex items-center gap-4">
+        <div className="h-px w-8 md:w-16 bg-gradient-to-r from-transparent to-primary/50"></div>
+        <div className="text-primary text-[10px] md:text-xs font-mono tracking-[0.6em] uppercase font-bold">
+          T-MINUS TO PROTOCOL ACTIVATION
+        </div>
+        <div className="h-px w-8 md:w-16 bg-gradient-to-l from-transparent to-primary/50"></div>
+      </div>
+
+      <div className="flex gap-3 md:gap-6">
+        {[
+          { label: 'DAYS', value: timeLeft.days },
+          { label: 'HOURS', value: timeLeft.hours },
+          { label: 'MINUTES', value: timeLeft.minutes },
+          { label: 'SECONDS', value: timeLeft.seconds }
+        ].map((item, i) => (
+          <div key={i} className="flex flex-col items-center group">
+            <div className="relative">
+              <div className="absolute -inset-1 bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
+              <div className="relative w-14 md:w-20 h-16 md:h-24 bg-surface/80 backdrop-blur-sm border border-primary/30 rounded flex items-center justify-center shadow-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                <span className="text-2xl md:text-5xl font-black text-white font-mono tracking-tighter">
+                  {String(item.value).padStart(2, '0')}
+                </span>
+                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary/60"></div>
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary/60"></div>
+              </div>
+            </div>
+            <span className="text-[8px] md:text-[10px] text-primary/60 font-bold mt-2 tracking-widest uppercase">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Hero;
